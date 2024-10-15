@@ -6,12 +6,12 @@ on:
 
 jobs:
   update-readme:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     permissions:
       contents: write
     steps:
       - uses: actions/checkout@v3
-      - uses: k2bd/advent-readme-stars@v3
+      - uses: k2bd/advent-readme-stars@v1
         with:
           year: 2023
           userId: 428853
