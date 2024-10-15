@@ -15,7 +15,7 @@ jobs:
         with:
           year: 2023
           userId: 428853
-          sessionCookie: ${{ secrets.AOC_SESSION }}
+          sessionCookie: ${{ Environment1.AOC_SESSION }}
       - uses: l-rettberg/git-auto-commit-action@v5
         with:
           commit_message: Update README stars
