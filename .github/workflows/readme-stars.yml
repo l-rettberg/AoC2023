@@ -14,7 +14,7 @@ jobs:
       - uses: k2bd/advent-readme-stars@v1
         with:
           year: 2023
-          userId: 1184796
+          userId: 428853
           sessionCookie: ${{ secrets.AOC_SESSION }}
       - uses: l-rettberg/git-auto-commit-action@v5
         with:
