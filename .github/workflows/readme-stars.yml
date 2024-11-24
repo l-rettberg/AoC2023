@@ -1,21 +1,28 @@
 name: Update README ⭐
 on:
   schedule:
-    - cron: "51 */4 * * *"  # Every 4 hours
+    - cron: "0 */4 * * *"  # Every 4 hours
   workflow_dispatch:
 
 jobs:
   update-readme:
     runs-on: ubuntu-latest
+
     permissions:
+      # Give the default GITHUB_TOKEN write permission to commit and push the
+      # added or changed files to the repository.
       contents: write
+
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
+
       - uses: k2bd/advent-readme-stars@v1
         with:
           year: 2023
           userId: 428853
           sessionCookie: ${{ secrets.AOC_SESSION }}
-      - uses: stefanzweifel/git-auto-commit-action@v5 # use v5
+
+      - uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: Update README stars
+          commit_user_name: AoC stars bot
